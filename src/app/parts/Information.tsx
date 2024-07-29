@@ -5,8 +5,13 @@ export default function Information() {
   return (
     <section className="flex w-screen flex-col gap-y-16 px-4 lg:px-20">
       <div className="flex w-full items-center justify-between">
-        <h1 className="text-6xl font-semibold text-dark">Information</h1>
-        <Link href="/berita" className="poppins text-2xl font-medium text-pink">
+        <h1 className="text-4xl font-semibold text-dark lg:text-6xl">
+          Information
+        </h1>
+        <Link
+          href="/berita"
+          className="poppins font-medium text-pink lg:text-2xl"
+        >
           Lihat Semua
         </Link>
       </div>

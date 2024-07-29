@@ -18,10 +18,15 @@ const config: Config = {
         scale: {
           '0%': { transform: 'scaleX(0)' },
           '100%': { transform: 'scaleX(1)' }
+        },
+        slide: {
+          from: { transform: 'translateX(0%)' },
+          to: { transform: 'translateX(-100%)' }
         }
       },
       animation: {
-        scale: 'scale 0.3s ease-out'
+        scale: 'scale 0.3s ease-out',
+        autoSlide: 'slide 20s linear infinite'
       }
     }
   },

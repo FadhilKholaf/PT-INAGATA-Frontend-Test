@@ -12,16 +12,16 @@ export default function NewsList() {
   );
 
   return (
-    <section className="flex w-screen flex-col px-20">
+    <section className="flex w-screen flex-col px-4 lg:px-20">
       <div className="mb-10 flex gap-x-5">
         <p
-          className="poppins text-dark group relative cursor-pointer py-2 text-2xl"
+          className="poppins group relative cursor-pointer py-2 text-2xl text-dark"
           onClick={() => setSearch('SEMUA')}
         >
           Semua
           <span
             className={cn(
-              'bg-pink absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full transition-transform duration-300 ease-out',
+              'absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-pink transition-transform duration-300 ease-out',
               {
                 'scale-x-100': search === 'SEMUA',
                 'group-hover:origin-right group-hover:scale-100':
@@ -31,13 +31,13 @@ export default function NewsList() {
           ></span>
         </p>
         <p
-          className="poppins text-dark group relative cursor-pointer py-2 text-2xl"
+          className="poppins group relative cursor-pointer py-2 text-2xl text-dark"
           onClick={() => setSearch('BERITA')}
         >
           Berita
           <span
             className={cn(
-              'bg-pink absolute bottom-0 left-0 h-0.5 w-full scale-x-0 rounded-full transition-transform duration-300 ease-out',
+              'absolute bottom-0 left-0 h-0.5 w-full scale-x-0 rounded-full bg-pink transition-transform duration-300 ease-out',
               {
                 'scale-x-100': search === 'BERITA',
                 'group-hover:scale-100': search !== 'BERITA'
@@ -46,13 +46,13 @@ export default function NewsList() {
           ></span>
         </p>
         <p
-          className="poppins text-dark group relative cursor-pointer py-2 text-2xl"
+          className="poppins group relative cursor-pointer py-2 text-2xl text-dark"
           onClick={() => setSearch('PENGUMUMAN')}
         >
           Pengumuman
           <span
             className={cn(
-              'bg-pink absolute bottom-0 left-0 h-0.5 w-full origin-right scale-x-0 rounded-full transition-transform duration-300 ease-out',
+              'absolute bottom-0 left-0 h-0.5 w-full origin-right scale-x-0 rounded-full bg-pink transition-transform duration-300 ease-out',
               {
                 'scale-x-100': search === 'PENGUMUMAN',
                 'group-hover:origin-left group-hover:scale-100':
@@ -62,12 +62,16 @@ export default function NewsList() {
           ></span>
         </p>
       </div>
-      <div className="mb-20 flex w-full flex-wrap justify-between gap-8">
+      <div className="mb-20 flex w-full flex-wrap justify-between gap-12 lg:gap-8">
         {information.map((item, index) => {
           if (search !== 'SEMUA' && item.type === search) {
             return (
-              <Link href={`/berita/${item.title}`} key={index}>
-                <div className="h-[500px] w-[370px]">
+              <Link
+                href={`/berita/${item.title}`}
+                key={index}
+                className="w-full lg:w-fit"
+              >
+                <div className="h-[500px] w-full lg:w-[370px]">
                   <Image
                     src={`/informations/${item.image}`}
                     alt="Logo"
@@ -87,10 +91,10 @@ export default function NewsList() {
                     {item.type[0] + item.type.slice(1).toLowerCase()}
                   </p>
                   <div className="flex flex-col gap-y-2">
-                    <p className="poppins text-light text-xl font-medium">
+                    <p className="poppins text-xl font-medium text-light">
                       {item.date}
                     </p>
-                    <p className="poppins text-dark text-2xl font-medium">
+                    <p className="poppins text-2xl font-medium text-dark">
                       {item.title}
                     </p>
                   </div>
@@ -101,8 +105,12 @@ export default function NewsList() {
           //
           if (search === 'SEMUA') {
             return (
-              <Link href={`/berita/${item.title}`} key={index}>
-                <div className="h-[500px] w-[370px]">
+              <Link
+                href={`/berita/${item.title}`}
+                key={index}
+                className="w-full lg:w-fit"
+              >
+                <div className="h-[500px] w-full lg:w-[370px]">
                   <Image
                     src={`/informations/${item.image}`}
                     alt="Logo"
@@ -122,10 +130,10 @@ export default function NewsList() {
                     {item.type[0] + item.type.slice(1).toLowerCase()}
                   </p>
                   <div className="flex flex-col gap-y-2">
-                    <p className="poppins text-light text-xl font-medium">
+                    <p className="poppins text-xl font-medium text-light">
                       {item.date}
                     </p>
-                    <p className="poppins text-dark text-2xl font-medium">
+                    <p className="poppins text-2xl font-medium text-dark">
                       {item.title}
                     </p>
                   </div>
@@ -136,16 +144,16 @@ export default function NewsList() {
         })}
       </div>
       <div className="flex w-full items-center justify-between">
-        <p className="text-light poppins text-2xl">
+        <p className="poppins text-sm text-light lg:text-2xl">
           Menampilkan 9 Dari 21 Data
         </p>
         <div className="flex gap-6">
-          <p className="text-light poppins text-2xl">Halaman</p>
-          <p className="text-light poppins text-2xl">{'<'}</p>
-          <p className="text-pink poppins text-2xl">1</p>
-          <p className="text-light poppins text-2xl">2</p>
-          <p className="text-light poppins text-2xl">3</p>
-          <p className="text-light poppins text-2xl">{'>'}</p>
+          <p className="poppins text-sm text-light lg:text-2xl">Halaman</p>
+          <p className="poppins text-sm text-light lg:text-2xl">{'<'}</p>
+          <p className="poppins text-sm text-pink lg:text-2xl">1</p>
+          <p className="poppins text-sm text-light lg:text-2xl">2</p>
+          <p className="poppins text-sm text-light lg:text-2xl">3</p>
+          <p className="poppins text-sm text-light lg:text-2xl">{'>'}</p>
         </div>
       </div>
     </section>

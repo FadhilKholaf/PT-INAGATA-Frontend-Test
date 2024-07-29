@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 export default function Profile() {
   return (
-    <section className="flex w-screen flex-col gap-y-4 px-20 mt-36">
+    <section className="flex w-screen flex-col gap-y-4 px-4 lg:px-20">
       <h1 className="text-center text-6xl font-semibold text-[#444444]">
         Video Profil
       </h1>
-      <p className="poppins text-gray text-center text-2xl">
+      <p className="poppins text-center text-2xl text-gray">
         Berikut adalah video profil dari sekolah kami
       </p>
       <iframe

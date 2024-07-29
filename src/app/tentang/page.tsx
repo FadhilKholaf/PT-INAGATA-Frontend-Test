@@ -8,7 +8,7 @@ import Partner from '../parts/Partner';
 
 export default function TentangKita() {
   return (
-    <main className="flex flex-col gap-32 overflow-hidden">
+    <main className="flex flex-col gap-y-32 overflow-hidden">
       <LandingTemplate
         title="Tentang Kami"
         description="Penjelasan Tentang Seokolah Kami Yang Dapat Menambah Referesi Anda"

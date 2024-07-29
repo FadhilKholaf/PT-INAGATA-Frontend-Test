@@ -5,12 +5,14 @@ import Link from 'next/link';
 export default function Article({ params }: { params: { title: string } }) {
   return (
     <main className="flex flex-col gap-32 overflow-hidden">
-      <div className="bg-purple absolute z-0 h-screen w-screen"></div>
-      <div className="z-10 flex w-screen flex-col gap-y-4 px-20 pt-40">
-        <h1 className="h-16 text-6xl font-bold tracking-wide text-white">
+      <div className="absolute z-0 h-screen w-screen bg-purple"></div>
+      <div className="z-10 flex w-screen flex-col gap-y-4 px-4 pt-40 lg:px-20">
+        <h1 className="h-16 text-4xl font-bold tracking-wide text-white lg:text-6xl">
           {params.title.split('%20').join(' ')}
         </h1>
-        <p className="poppins mb-6 text-3xl text-white">12 Desember 2020</p>
+        <p className="poppins mb-6 text-xl text-white lg:text-3xl">
+          12 Desember 2020
+        </p>
         <Image
           src="/informations/Belajar-Offline.png"
           alt="Belajar-Offline"
@@ -18,7 +20,7 @@ export default function Article({ params }: { params: { title: string } }) {
           height={500}
           className="mb-6 h-[70vh] w-full rounded-lg object-cover"
         />
-        <p className="poppins text-dark mb-6 text-xl">
+        <p className="poppins mb-6 text-justify text-xl text-dark">
           Jika anak kita ditanya apa mimpinya pasti jawabnya saya ingin kembali
           belajar di sekolah. Saya ingin bertemu dengan teman-teman sekelas
           saya. begitupun sebagian besar orang tua, mimpi mereka adalah melihat
@@ -29,14 +31,14 @@ export default function Article({ params }: { params: { title: string } }) {
           membantu anak-anak belajar sementara pekerjaan di rumah tidaklah
           sedikit.
         </p>
-        <p className="poppins text-dark mb-6 text-xl">
+        <p className="poppins mb-6 text-justify text-xl text-dark">
           Namun perlahan demi perlahan sejak Oktober lalu, beberapa sekolah di
           Indonesia sudah mulai menerapkan Pembelajaran Tatap Muka atau PTM
           namun secara terbatas termasuk di Purwakarta kota saya tercinta.
           Seminggu sekali anak-anak bersekolah tentunya dengan pembatasan jarak
           ataupun waktu belajar yang mengalami pengurangan.
         </p>
-        <p className="poppins text-dark mb-6 text-xl">
+        <p className="poppins mb-6 text-justify text-xl text-dark">
           Sekolah tempat saya mengabdi yaitu SMPN 8 Purwakarta baru di Januari
           tahun 2022 ini akan mulai melaksanakan pembelajaran tatap muka secara
           terbatas setelah memenuhi persyaratan yang ditentukan oleh Pemerintah
@@ -44,7 +46,7 @@ export default function Article({ params }: { params: { title: string } }) {
           lain tersedianya fasilitas kesehatan, siswa-siswi serta civitas
           sekolah yang sudah di vaksin dan beberapa persyaratan lainnya.
         </p>
-        <p className="poppins text-dark mb-6 text-xl">
+        <p className="poppins mb-6 text-justify text-xl text-dark">
           Karenanya untuk mewujudkan mimpi para siswa yang ingin kembali belajar
           di sekolah, di hari Jumat tanggal 7 Januari 2022 diselenggarakan
           kegiatan gotong royong membersihkan sekolah yang dilaksanakan oleh
@@ -52,7 +54,7 @@ export default function Article({ params }: { params: { title: string } }) {
           tentunya dilaksanakan juga oleh segenap civitas sekolah baik itu Guru
           maupun Staff Tata Usaha.
         </p>
-        <p className="poppins text-dark mb-6 text-xl">
+        <p className="poppins mb-6 text-justify text-xl text-dark">
           Kegiatan gotong royong membersihkan sekolah tersebut diadakan agar
           ketika anak kembali ke kelasnya, kelasnya sudah dalam keadaan bersih.
           Seperti yang dikatakan oleh perwakilan orang tua dari kelas 7 dan 9
@@ -62,7 +64,7 @@ export default function Article({ params }: { params: { title: string } }) {
           syarat bisa diadakan pembelajaran tatap muka adalah lingkungan
           pembelajaran yang bersih dan sehat.
         </p>
-        <p className="poppins text-dark mb-16 text-xl">
+        <p className="poppins mb-16 text-justify text-xl text-dark">
           Selain membawa peralatan kebersihan masing-masing, ada pula orang tua
           yang membawa makanan untuk dikonsumsi setelah kelas selesai. Terjalin
           pula kerjasama yang baik antar orang tua padahal ada yang tidak kenal
@@ -71,7 +73,7 @@ export default function Article({ params }: { params: { title: string } }) {
           hanya bertemu di pembelajaran online. Semuanya hadir demi mewujudkan
           pembelajaran tatap muka meskipun terbatas.
         </p>
-        <p className="poppins text-light text-2xl">Bagikan Artikel</p>
+        <p className="poppins text-2xl text-light">Bagikan Artikel</p>
         <div className="flex gap-4">
           <Image
             src="/Links.svg"
@@ -96,11 +98,13 @@ export default function Article({ params }: { params: { title: string } }) {
           />
         </div>
         <div className="mt-20 flex flex-col">
-          <h1 className="text-dark h-16 text-5xl font-bold">Artikel Lainnya</h1>
-          <div className="mt-10 flex w-full justify-between">
+          <h1 className="h-16 text-3xl font-bold text-dark lg:text-5xl">
+            Artikel Lainnya
+          </h1>
+          <div className="mt-10 flex w-full flex-col justify-between lg:flex-row">
             {information.slice(0, 3).map((item, index) => (
               <Link href={`/berita/${item.title}`} key={index}>
-                <div className="h-[500px] w-[370px]" key={index}>
+                <div className="h-[500px] w-full lg:w-[370px]" key={index}>
                   <Image
                     src={`/informations/${item.image}`}
                     alt="Logo"
@@ -109,10 +113,10 @@ export default function Article({ params }: { params: { title: string } }) {
                     className="mb-6 h-[320px] w-full rounded-lg object-cover"
                   />
                   <div className="flex flex-col gap-y-2">
-                    <p className="poppins text-light text-xl font-medium">
+                    <p className="poppins text-xl font-medium text-light">
                       {item.date}
                     </p>
-                    <p className="poppins text-dark text-2xl font-medium">
+                    <p className="poppins text-2xl font-medium text-dark">
                       {item.title}
                     </p>
                   </div>

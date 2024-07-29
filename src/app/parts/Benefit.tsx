@@ -4,8 +4,8 @@ import Image from 'next/image';
 export default function Benefit({ tentang }: { tentang?: boolean }) {
   return (
     <section
-      className={cn('-bottom-36 w-screen px-4 lg:px-20', {
-        'lg:absolute': !tentang
+      className={cn('-bottom-36 w-screen px-4 lg:p-20', {
+        'lg:absolute lg:p-0 lg:px-20': !tentang
       })}
     >
       {tentang && (
