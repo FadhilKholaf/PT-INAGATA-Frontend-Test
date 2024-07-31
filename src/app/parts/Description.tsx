@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Description({ tentang }: { tentang?: boolean }) {
   return (
-    <section className="flex h-fit w-screen items-center px-4 lg:px-20">
+    <section className="flex h-fit w-screen items-center px-4 lg:mt-32 lg:px-20">
       <div className="flex flex-col-reverse items-center justify-between gap-x-10 lg:flex-row">
         <Image
           src="/Description-Image.png"
